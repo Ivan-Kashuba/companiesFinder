@@ -1,0 +1,17 @@
+@import "./styles/preloader.css";
+@import "./styles/detailCompany.scss";
+.searchContainer {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.appContainer {
+  width: 1680px;
+  margin: 0 auto;
+}
+
+.error {
+  width: 300px;
+  margin: 0 auto;
+  word-wrap: break-word;
+}

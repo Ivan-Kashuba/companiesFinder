@@ -1,0 +1,41 @@
+.detailCompanyContainer {
+  width: 1280px;
+  margin: 30px auto;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 6px black;
+  padding: 35px;
+}
+
+.detailCompanyName {
+  text-align: center;
+}
+
+.detailHeaderContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shortDescription {
+  width: 300px;
+}
+
+.cleanDescription {
+  font-weight: bold;
+  color: #523838;
+  font-size: 18px;
+  text-align: center;
+  width: 600px;
+  margin: 20px auto;
+}
+
+.additionalInfo {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*# sourceMappingURL=detailCompany.css.map */
