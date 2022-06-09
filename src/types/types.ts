@@ -1,11 +1,11 @@
-export type companiesSliceInitialState_T = {
+export type CompaniesSliceInitialState_T = {
   isLoading: boolean;
-  companiesArr: Array<shortCompanyDescription>;
+  companiesArr: Array<ShortCompanyDescription>;
   searchError: string;
-  detailedCompanyInfo: null | detailCompanyDescription;
+  detailedCompanyInfo: null | DetailCompanyDescription;
 };
 
-export type shortCompanyDescription = {
+export type ShortCompanyDescription = {
   companyId: string;
   description: string;
   employeeCount: string;
@@ -15,7 +15,7 @@ export type shortCompanyDescription = {
   url: string;
 };
 
-export type detailCompanyDescription = {
+export type DetailCompanyDescription = {
   city: string;
   cleanDesc: string;
   cleanDescQuality: number;

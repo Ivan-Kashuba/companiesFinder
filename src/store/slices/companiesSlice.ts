@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
-  companiesSliceInitialState_T,
-  detailCompanyDescription,
-  shortCompanyDescription,
+  CompaniesSliceInitialState_T,
+  DetailCompanyDescription,
+  ShortCompanyDescription,
 } from "../../types/types";
 
-const initialState: companiesSliceInitialState_T = {
+const initialState: CompaniesSliceInitialState_T = {
   isLoading: false,
   companiesArr: [],
   searchError: "",
@@ -21,7 +21,7 @@ export const companiesSlice = createSlice({
     },
     setCompaniesArr(
       state,
-      action: PayloadAction<Array<shortCompanyDescription>>
+      action: PayloadAction<Array<ShortCompanyDescription>>
     ) {
       state.companiesArr = action.payload;
     },
@@ -30,7 +30,7 @@ export const companiesSlice = createSlice({
     },
     setDetailedCompanyInfo(
       state,
-      action: PayloadAction<detailCompanyDescription>
+      action: PayloadAction<DetailCompanyDescription>
     ) {
       state.detailedCompanyInfo = action.payload;
     },

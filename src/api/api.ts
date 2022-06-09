@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const key = "b6ef068dbdca4c8480976ceaa386e6f5";
+import { key } from "../config/config";
 
 const instance = axios.create({
   baseURL: "https://delphai-api.azure-api.net/case-study/",

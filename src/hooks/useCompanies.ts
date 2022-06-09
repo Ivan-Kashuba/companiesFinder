@@ -1,12 +1,11 @@
 import { useSelector } from "react-redux";
 import {
-  getCompaniesArr_S,
-  getDetailedCompanyInfo_S,
-  getIsLoading_S,
-  getSearchError_S,
+  companiesArrSelector,
+  detailedCompanyInfoSelector,
+  isLoadingSelector,
+  searchErrorSelector,
 } from "../store/selectors/companiesSelector";
 import { useAppDispatch } from "./useAppDispatch";
-import { useCallback } from "react";
 import {
   setCompaniesArr,
   setDetailedCompanyInfo,
@@ -18,59 +17,42 @@ import {
   getDetailCompanyInfo,
 } from "../store/thunks/thunks";
 import {
-  detailCompanyDescription,
-  shortCompanyDescription,
+  DetailCompanyDescription,
+  ShortCompanyDescription,
 } from "../types/types";
 
 export const useCompanies = () => {
   const dispatch = useAppDispatch();
 
-  const isLoading = useSelector(getIsLoading_S);
-  const companiesArr = useSelector(getCompaniesArr_S);
-  const searchError = useSelector(getSearchError_S);
-  const detailedCompanyInfo = useSelector(getDetailedCompanyInfo_S);
+  const isLoading = useSelector(isLoadingSelector);
+  const companiesArr = useSelector(companiesArrSelector);
+  const searchError = useSelector(searchErrorSelector);
+  const detailedCompanyInfo = useSelector(detailedCompanyInfoSelector);
 
-  const _setLoading = useCallback(
-    (status: boolean) => {
-      return dispatch(setLoading(status));
-    },
-    [dispatch]
-  );
+  const _setLoading = (status: boolean) => {
+    return dispatch(setLoading(status));
+  };
 
-  const _setCompaniesArr = useCallback(
-    (compArr: Array<shortCompanyDescription>) => {
-      return dispatch(setCompaniesArr(compArr));
-    },
-    [dispatch]
-  );
+  const _setCompaniesArr = (compArr: Array<ShortCompanyDescription>) => {
+    return dispatch(setCompaniesArr(compArr));
+  };
 
-  const _setSearchError = useCallback(
-    (error: string) => {
-      return dispatch(setSearchError(error));
-    },
-    [dispatch]
-  );
+  const _setSearchError = (error: string) => {
+    return dispatch(setSearchError(error));
+  };
 
-  const _setDetailedCompanyInfo = useCallback(
-    (companyInfo: detailCompanyDescription) => {
-      return dispatch(setDetailedCompanyInfo(companyInfo));
-    },
-    [dispatch]
-  );
+  const _setDetailedCompanyInfo = (companyInfo: DetailCompanyDescription) => {
+    return dispatch(setDetailedCompanyInfo(companyInfo));
+  };
 
-  const _getCompaniesFromSearch = useCallback(
-    (searchText: string) => {
-      return dispatch(getCompaniesFromSearch(searchText));
-    },
-    [dispatch]
-  );
+  const _getCompaniesFromSearch = (searchText: string) => {
+    return dispatch(getCompaniesFromSearch(searchText));
+  };
 
-  const _getDetailCompanyInfo = useCallback(
-    (companyId: string) => {
-      return dispatch(getDetailCompanyInfo(companyId));
-    },
-    [dispatch]
-  );
+  const _getDetailCompanyInfo = (companyId: string) => {
+    return dispatch(getDetailCompanyInfo(companyId));
+  };
+
   return {
     isLoading,
     companiesArr,

@@ -1,17 +1,16 @@
 import React from "react";
-import { detailCompanyDescription } from "../types/types";
+import { DetailCompanyDescription } from "../types/types";
 
-type props_T = {
-  detailedCompanyInfo: detailCompanyDescription;
+type DetailCompanyInfoProps = {
+  detailedCompanyInfo: DetailCompanyDescription;
 };
 
-const DetailCompanyInfo = ({ detailedCompanyInfo }: props_T) => {
+const DetailCompanyInfo = ({ detailedCompanyInfo }: DetailCompanyInfoProps) => {
   console.log(detailedCompanyInfo);
   return (
     <div className="detailCompanyContainer">
       <h1 className="detailCompanyName">{detailedCompanyInfo.name}</h1>
       <div className="detailHeaderContent">
-        <div className="shortDescription">{detailedCompanyInfo.shortDesc}</div>
         <div>
           {detailedCompanyInfo.country},{detailedCompanyInfo.city}, since {""}
           {detailedCompanyInfo.founded}

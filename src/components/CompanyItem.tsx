@@ -1,5 +1,5 @@
 import React from "react";
-import { shortCompanyDescription } from "../types/types";
+import { ShortCompanyDescription } from "../types/types";
 import {
   Button,
   Card,
@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-type props_T = {
-  companyInfo: shortCompanyDescription;
+type CompanyItemProps = {
+  companyInfo: ShortCompanyDescription;
 };
 
-const CompanyItem = ({ companyInfo }: props_T) => {
+const CompanyItem = ({ companyInfo }: CompanyItemProps) => {
   const navigate = useNavigate();
 
   const { description, companyId, founded, headquarters, name, url } =
